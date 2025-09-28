@@ -1,0 +1,6 @@
+@Menu.Endpoint_HostAddress = http://localhost:5233
+
+GET {{Menu.Endpoint_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
