@@ -1,9 +1,10 @@
-﻿using Menu.Entities;
+﻿using Menu.Entities.Entity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Menu.Endpoint.Controllers
 {
     [ApiController]
+
     public class IngredientController
     {
         public IngredientController()

@@ -1,4 +1,4 @@
-﻿using Menu.Entities;
+﻿using Menu.Entities.Entity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 
@@ -8,9 +8,10 @@ namespace Menu.Endpoint.Controllers
     [Route("[controller]")]
     public class MealController
     {
+        MealLogic logic;
         public MealController()
         {
-                
+                this.logic
         }
 
         [HttpGet]

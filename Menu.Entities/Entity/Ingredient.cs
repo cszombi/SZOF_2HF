@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Menu.Entities
+namespace Menu.Entities.Entity
 {
-    public class Meal
+    public class Ingredient
     {
 
         public int Id { get; set; }
@@ -14,10 +14,6 @@ namespace Menu.Entities
         public string Name { get; set; } = string.Empty;
 
         public string Category { get; set; } = string.Empty ;
-
-        List<Ingredient> Ingredients { get; set; } = new List<Ingredient>();
-
-        List<Ingredient> IngredientsAmount { get; set; } = new List<Ingredient>();
 
     }
 }
