@@ -1,0 +1,16 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Menu.Entities.Dto
+{
+    public class IngredientAmountShortView
+    {
+        public string Id { get; set; }
+        public string MealId { get; set; }
+        public string IngredientID { get; set; }
+        public double Amount { get; set; }
+    }
+}

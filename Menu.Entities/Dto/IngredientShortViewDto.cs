@@ -6,9 +6,10 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Dto
 {
-    public class MealCreateUpdateDto
+    public class IngredientShortViewDto
     {
-        public required string Name { get; set; } = "";
+        public string Id { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
         public double Calorie { get; set; }
     }
 }

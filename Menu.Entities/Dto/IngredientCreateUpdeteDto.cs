@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Dto
 {
-    public class MealCreateUpdateDto
+    public class IngredientCreateUpdeteDto
     {
-        public required string Name { get; set; } = "";
-        public double Calorie { get; set; }
+        public required string Name { get; set; } = string.Empty;
+        public required double Calorie { get; set; }
     }
 }
