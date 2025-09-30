@@ -23,13 +23,13 @@ namespace Menu.Logic.Logic
         }
 
 
-        public IEnumerable<IngredientsAmountShortViewDto> GetAllIngredients()
+        public IEnumerable<IngredientsAmountShortViewDto> GetAllIngredientAmounts()
         {
             return repo.GetAll().Select(t => mapper.Map<IngredientsAmountShortViewDto>(t));
         }
 
 
-        public async Task Create(IngredientCreateUpdeteDto dto)
+        public async Task Create(IngredientsAmountCreateUpdateDto dto)
         {
             var ingredientAmount = mapper.Map<IngredientsAmount>(dto);
             repo.Create(ingredientAmount);
@@ -43,7 +43,7 @@ namespace Menu.Logic.Logic
 
         }
 
-        public void UpdateIngredient(string id, IngredientCreateUpdeteDto dto)
+        public void Update(string id, IngredientsAmountCreateUpdateDto dto)
         {
             var old = repo.FindById(id);
             if (old != null)

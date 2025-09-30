@@ -1,4 +1,6 @@
-﻿using Menu.Entities.Entity;
+﻿using Menu.Entities.Dto;
+using Menu.Entities.Entity;
+using Menu.Logic.Logic;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics.Metrics;
 
@@ -9,33 +11,33 @@ namespace Menu.Endpoint.Controllers
     public class MealController
     {
         MealLogic logic;
-        public MealController()
+        public MealController(MealLogic logic)
         {
-                this.logic
+            this.logic = logic;
         }
 
         [HttpGet]
-        public IEnumerable<Meal> Get()
+        public IEnumerable<MealShortViewDto> Get()
         {
-            
+            return logic.GetAllMeals();
         }
 
         [HttpPost]
-        public void Post()
+        public void Post(MealCreateUpdateDto dto)
         {
-
+            logic.Create(dto);
         }
 
-        [HttpPut]
-        public void Update([FromBody] Meal value)
+        [HttpPut("{id}")]
+        public void Update(string id,[FromBody] MealCreateUpdateDto dto)
         {
-            
+            logic.Update(id, dto);
         }
 
-        [HttpDelete]
-        public void Delete(int id)
+        [HttpDelete("{id}")]
+        public void Delete(string id)
         {
-
+            logic.Delete(id);
         }
     }
 }

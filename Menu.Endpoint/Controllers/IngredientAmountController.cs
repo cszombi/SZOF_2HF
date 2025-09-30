@@ -1,42 +1,42 @@
-﻿using Menu.Entities.Entity;
+﻿using Menu.Entities.Dto;
+using Menu.Entities.Entity;
+using Menu.Logic.Logic;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Menu.Endpoint.Controllers
 {
+    [ApiController]
+    [Route("[controller]")]
     public class IngredientAmountController
     {
-        [ApiController]
-        [Route("[controller]")]
-        public class IngredientQuantityController : ControllerBase
+        IngredientsAmountLogic logic;
+        public IngredientAmountController(IngredientsAmountLogic logic)
         {
-            IngredientsAmount logic;
-            public IngredientQuantityController(IngredientQuantityLogic logic)
-            {
-                this.logic = logic;
-            }
-
-            [HttpGet]
-            public IEnumerable<IngredientQuantityGetDto> Get()
-            {
-                return logic.Read();
-            }
-
-            [HttpPost]
-            public async Task Post(IngredientQuantityPostPutDto dto)
-            {
-                await logic.Create(dto);
-            }
-
-            [HttpDelete("{id}")]
-            public async Task Delete(string id)
-            {
-                await logic.Delete(id);
-            }
-
-            [HttpPut("{id}")]
-            public async Task Update(string id, [FromBody] IngredientQuantityPostPutDto dto)
-            {
-                await logic.Update(id, dto);
-            }
+            this.logic = logic;
         }
+
+        [HttpGet]
+        public IEnumerable<IngredientsAmountShortViewDto> Get()
+        {
+            return logic.GetAllIngredientAmounts();
+        }
+
+        [HttpPost]
+        public void Post(IngredientsAmountCreateUpdateDto dto)
+        {
+            logic.Create(dto);
+        }
+
+        [HttpPut("{id}")]
+        public void Update(string id, [FromBody] IngredientsAmountCreateUpdateDto dto)
+        {
+            logic.Update(id, dto);
+        }
+
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+            logic.Delete(id);
+        }
+    }
 }

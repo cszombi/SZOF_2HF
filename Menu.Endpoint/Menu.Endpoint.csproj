@@ -12,6 +12,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Menu.Entities\Menu.Entities.csproj" />
+    <ProjectReference Include="..\Menu.Logic\Menu.Logic.csproj" />
   </ItemGroup>
 
 </Project>

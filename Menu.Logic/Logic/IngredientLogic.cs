@@ -50,7 +50,7 @@ namespace Menu.Logic.Logic
 
         }
 
-        public void UpdateIngredient(string id, IngredientCreateUpdeteDto dto)
+        public void Update(string id, IngredientCreateUpdeteDto dto)
         {
             var old = repo.FindById(id);
             if (old != null)

@@ -47,7 +47,7 @@ namespace Menu.Logic.Logic
             repo.DeleteById(id);
         }
 
-        public void UpdateMovie(string id, MealCreateUpdateDto dto)
+        public void Update(string id, MealCreateUpdateDto dto)
         {
             var old = repo.FindById(id);
             if (old != null)
