@@ -7,12 +7,11 @@ namespace Menu.Data
     public class MenuContext : IdentityDbContext
     {
         public DbSet<Meal> meals { get; set; }
-
         public DbSet<Ingredient> ingredients { get; set; }
 
         public MenuContext(DbContextOptions<MenuContext> ctx) : base(ctx)
         {  
-
+            Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
