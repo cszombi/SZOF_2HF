@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu.Entities.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Entity
 {
-    public class Meal
+    public class Meal : IIdEntity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; } = Guid.NewGuid().GetHashCode();
+        public string Id { get; set; } = Guid.NewGuid().ToString();
 
         [StringLength(250)]
         public string Name { get; set; } = string.Empty;

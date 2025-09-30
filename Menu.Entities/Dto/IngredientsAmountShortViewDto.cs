@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Dto
 {
-    public class IngredientsAmountShortView
+    public class IngredientsAmountShortViewDto
     {
         public string Id { get; set; }
         public string MealId { get; set; }

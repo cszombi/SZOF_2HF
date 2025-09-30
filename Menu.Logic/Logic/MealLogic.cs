@@ -50,10 +50,12 @@ namespace Menu.Logic.Logic
         public void UpdateMovie(string id, MealCreateUpdateDto dto)
         {
             var old = repo.FindById(id);
-            mapper.Map(dto, old);
-            repo.Update(old);
+            if (old != null)
+            {
+                mapper.Map(dto, old);
+                repo.Update(old);
+            }
         }
-
         
     }
 }

@@ -23,9 +23,9 @@ namespace Menu.Logic.Logic
         }
 
 
-        public IEnumerable<Ingredient> GetAllIngredients()
+        public IEnumerable<IngredientShortViewDto> GetAllIngredients()
         {
-            return repo.GetAll().Select(t => mapper.Map<Ingredient>(t));
+            return repo.GetAll().Select(t => mapper.Map<IngredientShortViewDto>(t));
         }
 
 
@@ -38,7 +38,7 @@ namespace Menu.Logic.Logic
             }
             else
             {
-                throw new ArgumentException("Ilyen étel már létezik!");
+                throw new ArgumentException("Ilyen hozzávaló már létezik!");
             }
 
         }
@@ -53,8 +53,11 @@ namespace Menu.Logic.Logic
         public void UpdateIngredient(string id, IngredientCreateUpdeteDto dto)
         {
             var old = repo.FindById(id);
-            mapper.Map(dto, old);
-            repo.Update(old);
+            if (old != null)
+            {
+                mapper.Map(dto, old);
+                repo.Update(old);
+            }
         }
 
     }

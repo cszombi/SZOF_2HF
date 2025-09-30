@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Menu.Entities.Helper;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Entity
 {
-    public class Ingredient
+    public class Ingredient : IIdEntity
     {
 
         [Key]

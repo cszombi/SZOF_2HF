@@ -22,7 +22,7 @@ namespace Menu.Logic.Dto
                 cfg.CreateMap<IngredientCreateUpdeteDto, Ingredient>();
                 cfg.CreateMap<Ingredient, IngredientShortViewDto>();
                 cfg.CreateMap<IngredientsAmountCreateUpdateDto, IngredientsAmount>();
-                cfg.CreateMap<IngredientsAmount,IngredientsAmountShortView>();
+                cfg.CreateMap<IngredientsAmount,IngredientsAmountShortViewDto>();
             });
             mapper = new Mapper(config);
         }
