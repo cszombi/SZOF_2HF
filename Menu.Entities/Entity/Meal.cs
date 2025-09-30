@@ -21,10 +21,10 @@ namespace Menu.Entities.Entity
         public double Calorie { get; set; } 
 
         [NotMapped]
-        public virtual ICollection<Ingredient> Ingredients { get; set; }
+        public virtual ICollection<Ingredient>? Ingredients { get; set; }
 
         [NotMapped]
-        public virtual ICollection<IngredientsAmount> IngredientsAmounts { get; set; } 
+        public virtual ICollection<IngredientsAmount>? IngredientsAmounts { get; set; } 
 
     }
 }

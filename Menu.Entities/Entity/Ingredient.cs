@@ -22,7 +22,7 @@ namespace Menu.Entities.Entity
         [NotMapped]
         public virtual ICollection<Meal>? Meals { get; set; }
         [NotMapped]
-        public virtual ICollection<IngredientsAmount> IngredientsAmounts { get; set; }
+        public virtual ICollection<IngredientsAmount>? IngredientsAmounts { get; set; }
 
     }
 }

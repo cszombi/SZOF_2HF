@@ -17,10 +17,22 @@ namespace Menu.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Meal>()
-                 .HasMany(r => r.ingredients)
-                 .WithMany(m => m.meals)
-                 .UsingEntity<IngredientQuantity>(x => x.HasOne(x => x.ingredient).WithMany().HasForeignKey(x => x.IngredientID).OnDelete(DeleteBehavior.Cascade),
-                 x => x.HasOne(x => x.recipe).WithMany().HasForeignKey(x => x.RecipeID).OnDelete(DeleteBehavior.Cascade));
+               .HasMany(r => r.Ingredients)
+               .WithMany(m => m.Meals)
+               .UsingEntity<IngredientsAmount>(x => x.HasOne(x => x.ingredient).WithMany().HasForeignKey(x => x.IngredientID).OnDelete(DeleteBehavior.Cascade),
+               x => x.HasOne(x => x.meal).WithMany().HasForeignKey(x => x.MealID).OnDelete(DeleteBehavior.Cascade));
+
+            modelBuilder.Entity<IngredientsAmount>()
+               .HasOne(x => x.meal)
+               .WithMany(x => x.IngredientsAmounts)
+               .HasForeignKey(x => x.MealID)
+               .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<IngredientsAmount>()
+               .HasOne(x => x.ingredient)
+               .WithMany(x => x.IngredientsAmounts)
+               .HasForeignKey(x => x.IngredientID)
+               .OnDelete(DeleteBehavior.Cascade);
 
             base.OnModelCreating(modelBuilder);
         }
