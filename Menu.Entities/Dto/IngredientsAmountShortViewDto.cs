@@ -12,5 +12,7 @@ namespace Menu.Entities.Dto
         public string MealId { get; set; }
         public string IngredientID { get; set; }
         public double Amount { get; set; }
+        public IEnumerable<IngredientShortViewDto> Ingredients { get; set; }
+        public IEnumerable<IngredientsAmountShortViewDto> IngredientQuantities { get; set; }
     }
 }

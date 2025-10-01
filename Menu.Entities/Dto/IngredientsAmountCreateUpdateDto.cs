@@ -10,7 +10,8 @@ namespace Menu.Entities.Dto
     {
         public string MealID { get; set; }
         public string IngredientID { get; set; }
-        public double Amount { get; set; }
         public string IngridientName { get; set; }
+        public double Amount { get; set; }
+        
     }
 }

@@ -18,7 +18,9 @@ namespace Menu.Logic.Dto
             var config = new MapperConfiguration(cfg =>
             {
                 cfg.CreateMap<MealCreateUpdateDto, Meal>();
-                cfg.CreateMap<Meal, MealShortViewDto>();
+                cfg.CreateMap<Meal, MealShortViewDto>()
+                 .ForMember(dest => dest.Ingre, opt => opt.MapFrom(src => src.IngredientsAmounts.Select(ia => ia.Ingredient))
+                 .AfterMap((src, dest) => dest.Ingredients = dest.Ingredients.DistinctBy(i => i.Id).ToList()));
                 cfg.CreateMap<IngredientCreateUpdeteDto, Ingredient>();
                 cfg.CreateMap<Ingredient, IngredientShortViewDto>();
                 cfg.CreateMap<IngredientsAmountCreateUpdateDto, IngredientsAmount>();
