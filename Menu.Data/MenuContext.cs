@@ -34,6 +34,7 @@ namespace Menu.Data
                .HasForeignKey(x => x.IngredientID)
                .OnDelete(DeleteBehavior.Cascade);
 
+
             base.OnModelCreating(modelBuilder);
         }
     }
