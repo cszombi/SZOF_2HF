@@ -22,7 +22,7 @@ namespace Menu.Logic.Dto
                 cfg.CreateMap<Meal, MealShortViewDto>()
                     .ForMember(dest => dest.IngredientQuantities, opt => opt.MapFrom(src => src.IngredientsAmounts))
                     .AfterMap((src, dest) =>
-                        dest.Calorie = src.IngredientsAmounts?.Sum(x => x.ingredient.Calorie * x.QuantityInGrams / 100) ?? 0
+                        dest.Calorie = src.IngredientsAmounts?.Sum(x => x.ingredient.Calorie * x.Amount / 100) ?? 0
                     );
                 cfg.CreateMap<IngredientCreateUpdeteDto, Ingredient>();
                 cfg.CreateMap<Ingredient, IngredientShortViewDto>();

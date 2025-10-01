@@ -19,7 +19,7 @@ namespace Menu.Entities.Entity
         public string Name { get; set; } = string.Empty;
 
 
-        public double Calories => IngredientsAmounts?.Sum(i => (i.ingredient?.Calorie ?? 0) * i.QuantityInGrams / 100) ?? 0;
+        public double Calories => IngredientsAmounts?.Sum(i => (i.ingredient?.Calorie ?? 0) * i.Amount / 100) ?? 0;
 
         [NotMapped]
         public virtual ICollection<Ingredient>? Ingredients { get; set; }
