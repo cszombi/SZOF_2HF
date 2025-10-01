@@ -22,6 +22,7 @@ namespace Menu.Endpoint.Controllers
             return logic.GetAllMeals();
         }
 
+
         [HttpPost]
         public void Post(MealCreateUpdateDto dto)
         {
