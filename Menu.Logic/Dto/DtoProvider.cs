@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Menu.Entities.Dto;
 using Menu.Entities.Entity;
+using Microsoft.CodeAnalysis;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,8 +20,7 @@ namespace Menu.Logic.Dto
             {
                 cfg.CreateMap<MealCreateUpdateDto, Meal>();
                 cfg.CreateMap<Meal, MealShortViewDto>()
-                 .ForMember(dest => dest.Ingre, opt => opt.MapFrom(src => src.IngredientsAmounts.Select(ia => ia.Ingredient))
-                 .AfterMap((src, dest) => dest.Ingredients = dest.Ingredients.DistinctBy(i => i.Id).ToList()));
+                 .AfterMap((src, dest) => dest.Calorie = src.Ingredients?.Count > 0 ? (src.Ingredients.Sum(r => r.Calorie * (r.IngredientsAmounts.Select(x => x.Amount)).Single() / 100)) : 0);
                 cfg.CreateMap<IngredientCreateUpdeteDto, Ingredient>();
                 cfg.CreateMap<Ingredient, IngredientShortViewDto>();
                 cfg.CreateMap<IngredientsAmountCreateUpdateDto, IngredientsAmount>();
