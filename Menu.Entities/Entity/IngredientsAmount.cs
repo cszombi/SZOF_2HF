@@ -18,9 +18,11 @@ namespace Menu.Entities.Entity
         public string MealID { get; set; }
         public string IngredientID { get; set; }
         public double Amount { get; set; }
+        public double QuantityInGrams { get; set; }
         [NotMapped]
         public virtual Ingredient ingredient { get; set; }
         [NotMapped]
         public virtual Meal meal { get; set; }
+
     }
 }

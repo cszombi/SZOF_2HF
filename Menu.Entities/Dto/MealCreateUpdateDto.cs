@@ -9,6 +9,5 @@ namespace Menu.Entities.Dto
     public class MealCreateUpdateDto
     {
         public required string Name { get; set; } = "";
-        public double Calorie { get; set; }
     }
 }

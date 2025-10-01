@@ -11,6 +11,7 @@ namespace Menu.Entities.Dto
         public string Id { get; set; }
         public string MealId { get; set; }
         public string IngredientID { get; set; }
+        public string IngredientName { get; set; }
         public double Amount { get; set; }
     }
 }

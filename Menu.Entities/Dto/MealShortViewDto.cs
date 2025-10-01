@@ -11,6 +11,8 @@ namespace Menu.Entities.Dto
         public string Id { get; set; } = string.Empty;
         public string Name { get; set; } = string.Empty;
         public double Calorie { get; set; }
+        public IEnumerable<IngredientShortViewDto> Ingredients { get; set; }
+        public IEnumerable<IngredientsAmountShortViewDto> IngredientQuantities { get; set; }
 
     }
 }

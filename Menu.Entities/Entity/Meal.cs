@@ -18,8 +18,8 @@ namespace Menu.Entities.Entity
         [StringLength(250)]
         public string Name { get; set; } = string.Empty;
 
-        [NotMapped]
-        public double Calorie { get; set; } 
+
+        public double Calories => IngredientsAmounts?.Sum(i => (i.ingredient?.Calorie ?? 0) * i.QuantityInGrams / 100) ?? 0;
 
         [NotMapped]
         public virtual ICollection<Ingredient>? Ingredients { get; set; }
