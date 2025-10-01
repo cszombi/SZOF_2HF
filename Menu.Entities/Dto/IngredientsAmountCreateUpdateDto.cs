@@ -8,7 +8,7 @@ namespace Menu.Entities.Dto
 {
     public class IngredientsAmountCreateUpdateDto
     {
-        public string RecipeID { get; set; }
+        public string MealID { get; set; }
         public string IngredientID { get; set; }
         public double Amount { get; set; }
         public string IngridientName { get; set; }
