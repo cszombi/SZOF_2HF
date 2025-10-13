@@ -13,19 +13,17 @@ namespace Menu.Entities.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public string Id { get; set; } = Guid.NewGuid().ToString();
+        public string Id { get; set; }
 
-        [StringLength(250)]
-        public string Name { get; set; } = string.Empty;
+        [StringLength(100)]
+        public string Title { get; set; }
 
+        [StringLength(300)]
+        public string Description { get; set; } = string.Empty;
 
-        public double Calories => IngredientsAmounts?.Sum(i => (i.ingredient?.Calorie ?? 0) * i.Amount / 100) ?? 0;
+        public DateTime CreatedAt { get; set; }
 
-        [NotMapped]
-        public virtual ICollection<User>? Ingredients { get; set; }
-
-        [NotMapped]
-        public virtual ICollection<IngredientsAmount>? IngredientsAmounts { get; set; } 
+        public string Author { get; set; } = string.Empty;
 
     }
 }

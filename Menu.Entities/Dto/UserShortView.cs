@@ -9,15 +9,9 @@ using System.Threading.Tasks;
 
 namespace ReportApp.Entities.Dto
 {
-    public class UserShortView : IIdEntity
+    public class UserShortView 
     {
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int Id { get; set; }
-
-
-
-
+        
 
     }
 }
