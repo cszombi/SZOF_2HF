@@ -13,10 +13,10 @@ namespace Menu.Logic.Logic
 {
     public class IngredientLogic
     {
-        public Repository<Ingredient> repo;
+        public Repository<User> repo;
         public Mapper mapper;
 
-        public IngredientLogic(Repository<Ingredient> repo, DtoProvider provider)
+        public IngredientLogic(Repository<User> repo, DtoProvider provider)
         {
             this.repo = repo;
             this.mapper = provider.mapper;
@@ -31,7 +31,7 @@ namespace Menu.Logic.Logic
 
         public async Task Create(IngredientCreateUpdeteDto dto)
         {
-            var ingredient = mapper.Map<Ingredient>(dto);
+            var ingredient = mapper.Map<User>(dto);
             if (repo.GetAll().FirstOrDefault(x => x.Name == ingredient.Name) == null)
             {
                 repo.Create(ingredient);

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Menu.Entities.Entity
 {
-    public class Ingredient : IIdEntity
+    public class User : IIdEntity
     {
 
         [Key]
@@ -21,7 +21,7 @@ namespace Menu.Entities.Entity
 
         public double Calorie { get; set; }
         [NotMapped]
-        public virtual ICollection<Meal>? Meals { get; set; }
+        public virtual ICollection<Report>? Meals { get; set; }
         [NotMapped]
         public virtual ICollection<IngredientsAmount>? IngredientsAmounts { get; set; }
 

@@ -6,8 +6,8 @@ namespace Menu.Data
 {
     public class MenuContext : IdentityDbContext
     {
-        public DbSet<Meal> meals { get; set; }
-        public DbSet<Ingredient> ingredients { get; set; }
+        public DbSet<Report> meals { get; set; }
+        public DbSet<User> ingredients { get; set; }
 
         public MenuContext(DbContextOptions<MenuContext> ctx) : base(ctx)
         {  
@@ -16,7 +16,7 @@ namespace Menu.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Meal>()
+            modelBuilder.Entity<Report>()
                .HasMany(r => r.Ingredients)
                .WithMany(m => m.Meals)
                .UsingEntity<IngredientsAmount>(x => x.HasOne(x => x.ingredient).WithMany().HasForeignKey(x => x.IngredientID).OnDelete(DeleteBehavior.Cascade),

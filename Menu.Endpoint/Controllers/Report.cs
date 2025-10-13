@@ -8,10 +8,10 @@ namespace Menu.Endpoint.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class MealController
+    public class Report
     {
         MealLogic logic;
-        public MealController(MealLogic logic)
+        public Report(MealLogic logic)
         {
             this.logic = logic;
         }

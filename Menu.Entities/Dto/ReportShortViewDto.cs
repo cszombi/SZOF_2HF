@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Menu.Entities.Dto
+namespace ReportApp.Entities.Dto
 {
-    public class MealCreateUpdateDto
+    public class ReportShortViewDto
     {
-        public required string Name { get; set; } = "";
+
+
     }
 }

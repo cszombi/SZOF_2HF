@@ -18,14 +18,14 @@ namespace Menu.Logic.Dto
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<MealCreateUpdateDto, Meal>();
-                cfg.CreateMap<Meal, MealShortViewDto>()
+                cfg.CreateMap<MealCreateUpdateDto, Report>();
+                cfg.CreateMap<Report, MealShortViewDto>()
                     .ForMember(dest => dest.IngredientQuantities, opt => opt.MapFrom(src => src.IngredientsAmounts))
                     .AfterMap((src, dest) =>
                         dest.Calorie = src.IngredientsAmounts?.Sum(x => x.ingredient.Calorie * x.Amount / 100) ?? 0
                     );
-                cfg.CreateMap<IngredientCreateUpdeteDto, Ingredient>();
-                cfg.CreateMap<Ingredient, IngredientShortViewDto>();
+                cfg.CreateMap<IngredientCreateUpdeteDto, User>();
+                cfg.CreateMap<User, IngredientShortViewDto>();
                 cfg.CreateMap<IngredientsAmountCreateUpdateDto, IngredientsAmount>();
                 cfg.CreateMap<IngredientsAmount,IngredientsAmountShortViewDto>();
             });

@@ -13,10 +13,10 @@ namespace Menu.Logic.Logic
 {
     public class MealLogic
     {
-        public Repository<Meal> repo;
+        public Repository<Report> repo;
         public Mapper mapper;
 
-        public MealLogic(Repository<Meal> repo, DtoProvider provider)
+        public MealLogic(Repository<Report> repo, DtoProvider provider)
         {
             this.repo = repo;
             this.mapper = provider.mapper;
@@ -30,7 +30,7 @@ namespace Menu.Logic.Logic
 
         public async Task Create(MealCreateUpdateDto dto)
         {
-            var meal = mapper.Map<Meal>(dto);
+            var meal = mapper.Map<Report>(dto);
             if (repo.GetAll().FirstOrDefault(x => x.Name == meal.Name) == null)
             {
                 repo.Create(meal);
