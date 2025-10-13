@@ -1,13 +1,22 @@
-﻿using System;
+﻿using Menu.Entities.Helper;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ReportApp.Entities.Dto
 {
-    public class UserShortView
+    public class UserShortView : IIdEntity
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
+
+
 
 
     }
