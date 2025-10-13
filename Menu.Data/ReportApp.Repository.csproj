@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Menu.Entities\Menu.Entities.csproj" />
+    <ProjectReference Include="..\Menu.Entities\ReportApp.Entities.csproj" />
   </ItemGroup>
 
 </Project>

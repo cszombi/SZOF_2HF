@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36127.28
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Endpoint", "Menu.Endpoint\Menu.Endpoint.csproj", "{1FF373DF-3602-4279-933F-32123B107102}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Endpoint", "Menu.Endpoint\ReportApp.Endpoint.csproj", "{1FF373DF-3602-4279-933F-32123B107102}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Entities", "Menu.Entities\Menu.Entities.csproj", "{D2DD7CFD-8076-4C6C-A797-2EBB1A9BC380}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Entities", "Menu.Entities\ReportApp.Entities.csproj", "{D2DD7CFD-8076-4C6C-A797-2EBB1A9BC380}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Logic", "Menu.Logic\Menu.Logic.csproj", "{76E28EB5-2EE9-44FF-96CF-DEF2569210F2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Logic", "Menu.Logic\ReportApp.Logic.csproj", "{76E28EB5-2EE9-44FF-96CF-DEF2569210F2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.Repository", "Menu.Data\Menu.Repository.csproj", "{8C257EDB-6F22-4C01-8C1F-43CF8666E3BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Repository", "Menu.Data\ReportApp.Repository.csproj", "{8C257EDB-6F22-4C01-8C1F-43CF8666E3BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

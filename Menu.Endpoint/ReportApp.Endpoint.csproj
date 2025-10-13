@@ -11,8 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Menu.Entities\Menu.Entities.csproj" />
-    <ProjectReference Include="..\Menu.Logic\Menu.Logic.csproj" />
+    <ProjectReference Include="..\Menu.Entities\ReportApp.Entities.csproj" />
+    <ProjectReference Include="..\Menu.Logic\ReportApp.Logic.csproj" />
   </ItemGroup>
 
 </Project>
