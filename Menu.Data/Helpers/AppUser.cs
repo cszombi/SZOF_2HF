@@ -11,9 +11,9 @@ namespace ReportApp.Repository.Helpers
     public class AppUser : IdentityUser
     {
             [StringLength(200)]
-            public required string FamilyName { get; set; } = "";
+            public required string LastName { get; set; } = string.Empty;
 
-            [StringLength(200)]
-            public required string GivenName { get; set; } = "";
+        [StringLength(200)]
+            public required string FirstName { get; set; } = string.Empty;
     }
 }

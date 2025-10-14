@@ -15,6 +15,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<ProjectReference Include="..\Menu.Entities\ReportApp.Entities.csproj" />
 		<ProjectReference Include="..\MovieClubX.Entities\SzerdaHarom.Entities.csproj" />
 	</ItemGroup>
 

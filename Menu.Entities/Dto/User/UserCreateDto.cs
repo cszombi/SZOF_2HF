@@ -12,9 +12,9 @@ namespace ReportApp.Entities.Dto.User
 
         public required string Password { get; set; } = string.Empty;
 
-        public required string FamilyName { get; set; } = string.Empty;
+        public required string LastName { get; set; } = string.Empty;
 
-        public required string GivenName { get; set; } = string.Empty;
+        public required string FirstName { get; set; } = string.Empty;
 
     }
 }

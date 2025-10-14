@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ReportApp.Entities.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
