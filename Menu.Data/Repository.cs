@@ -3,12 +3,13 @@ using ReportApp.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Menu.Repository
 {
-    public class Repository<T> where T : class, IIdEntity
+    public class Repository<T> where T : class, IIdentity
     {
         ReportAppContext ctx;
 
@@ -43,7 +44,7 @@ namespace Menu.Repository
 
         public T FindById(string id)
         {
-            return ctx.Set<T>().First(t => t.Id == id);
+            return ctx.Set<T>().First(t => t.Ti == id);
         }
 
 
