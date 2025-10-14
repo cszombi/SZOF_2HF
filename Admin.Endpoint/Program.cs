@@ -1,5 +1,4 @@
-
-namespace Admin.Endpoint
+namespace ReportApp.Endpoint
 {
     public class Program
     {

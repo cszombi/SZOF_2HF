@@ -1,5 +1,5 @@
-﻿using Menu.Entities.Helper;
-using ReportApp.Entities.Dto.User;
+﻿using ReportApp.Entities.Dto.User;
+using ReportApp.Entities.Helper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
