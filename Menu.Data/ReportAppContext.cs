@@ -1,40 +1,25 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Menu.Entities.Entity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Menu.Entities.Entity;
+using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace Menu.Data
+namespace ReportApp.Repository
 {
-    public class MenuContext : IdentityDbContext
+    public class ReportAppContext : IdentityDbContext
     {
-        public DbSet<Report> meals { get; set; }
-        public DbSet<User> ingredients { get; set; }
+        public DbSet<Report> reports { get; set; }
 
-        public MenuContext(DbContextOptions<MenuContext> ctx) : base(ctx)
-        {  
+        public ReportAppContext(DbContextOptions<ReportAppContext> ctx) : base(ctx)
+        {
             Database.EnsureCreated();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Report>()
-               .HasMany(r => r.Ingredients)
-               .WithMany(m => m.Meals)
-               .UsingEntity<IngredientsAmount>(x => x.HasOne(x => x.ingredient).WithMany().HasForeignKey(x => x.IngredientID).OnDelete(DeleteBehavior.Cascade),
-               x => x.HasOne(x => x.meal).WithMany().HasForeignKey(x => x.MealID).OnDelete(DeleteBehavior.Cascade));
-
-            modelBuilder.Entity<IngredientsAmount>()
-               .HasOne(x => x.meal)
-               .WithMany(x => x.IngredientsAmounts)
-               .HasForeignKey(x => x.MealID)
-               .OnDelete(DeleteBehavior.Cascade);
-
-            modelBuilder.Entity<IngredientsAmount>()
-               .HasOne(x => x.ingredient)
-               .WithMany(x => x.IngredientsAmounts)
-               .HasForeignKey(x => x.IngredientID)
-               .OnDelete(DeleteBehavior.Cascade);
-
-
             base.OnModelCreating(modelBuilder);
         }
     }
