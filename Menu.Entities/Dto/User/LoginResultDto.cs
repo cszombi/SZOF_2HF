@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ReportApp.Entities.Dto.User
 {
-    public class LoginResult
+    public class LoginResultDto
     {
         public string Token { get; set; } = string.Empty;
 

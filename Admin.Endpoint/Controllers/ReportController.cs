@@ -1,7 +1,14 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.IdentityModel.Tokens;
+using ReportApp.Entities.Dto.Report;
 using ReportApp.Entities.Dto.User;
+using ReportApp.Logic;
 using ReportApp.Repository.Helpers;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+using System.Text;
 
 namespace ReportApp.Endpoint.Controllers
 {
@@ -9,25 +16,27 @@ namespace ReportApp.Endpoint.Controllers
     [Route("[controller]")]
     public class ReportController : ControllerBase
     {
-        private UserManager<AppUser> userManager;
-        private RoleManager<IdentityRole> roleManager;
+        ReportLogic logic;
+        UserManager<AppUser> userManager;
 
-        public ReportController(UserManager<AppUser> userManager, RoleManager<IdentityRole> roleManager)
+        public ReportController(ReportLogic logic, UserManager<AppUser> userManager)
         {
+            this.logic = logic;
             this.userManager = userManager;
-            this.roleManager = roleManager;
         }
 
-        [HttpPost("register")]
-        public async Task Register(UserCreateDto dto)
+        [HttpGet]
+        [Authorize(Roles = "Admin")]
+        public IEnumerable<ReportViewDto> Get()
         {
-            var user = new AppUser
-            {
-                UserName = dto.Email,
-                Email = dto.Email,
-                EmailConfirmed = true,
-                
-            };
+            return logic.Read();
+        }
+        [HttpPost]
+        [Authorize]
+        public async Task Post(ReportCreateDto dto)
+        {
+            var user = await userManager.GetUserAsync(User);
+            await logic.Create(dto, user.FirstName + " " + user.LastName);
         }
     }
 }
