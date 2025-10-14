@@ -1,5 +1,5 @@
-﻿using Menu.Data;
-using Menu.Entities.Helper;
+﻿using Menu.Entities.Helper;
+using ReportApp.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +10,9 @@ namespace Menu.Repository
 {
     public class Repository<T> where T : class, IIdEntity
     {
-        MenuContext ctx;
+        ReportAppContext ctx;
 
-        public Repository(MenuContext ctx)
+        public Repository(ReportAppContext ctx)
         {
             this.ctx = ctx;
         }
