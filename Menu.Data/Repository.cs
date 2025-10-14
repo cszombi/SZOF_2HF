@@ -1,5 +1,4 @@
-﻿using Menu.Entities.Helper;
-using ReportApp.Repository;
+﻿using ReportApp.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +6,7 @@ using System.Security.Principal;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Menu.Repository
+namespace ReportApp.Repository
 {
     public class Repository<T> where T : class, IIdentity
     {
@@ -44,7 +43,7 @@ namespace Menu.Repository
 
         public T FindById(string id)
         {
-            return ctx.Set<T>().First(t => t.Ti == id);
+            return ctx.Set<T>().First(t =>t.Id == id);
         }
 
 

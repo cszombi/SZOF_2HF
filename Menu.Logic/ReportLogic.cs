@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using Menu.Entities.Entity;
 using Menu.Logic.Dto;
 using Menu.Repository;
 using ReportApp.Entities.Dto.Report;
+using ReportApp.Entities.Entity;
 using System;
 using System.Collections.Generic;
 using System.Linq;

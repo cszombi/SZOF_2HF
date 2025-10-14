@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Menu.Entities.Entity
+namespace ReportApp.Entities.Entity
 {
     public class Report : IIdEntity
     {
