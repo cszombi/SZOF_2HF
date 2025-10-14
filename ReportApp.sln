@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Logic", "Menu.Log
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Repository", "Menu.Data\ReportApp.Repository.csproj", "{8C257EDB-6F22-4C01-8C1F-43CF8666E3BE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Admin.Endpoint", "Admin.Endpoint\Admin.Endpoint.csproj", "{32B33C80-0D0D-4D1F-8A22-EE88353A2F43}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportApp.Endpoint", "Admin.Endpoint\ReportApp.Endpoint.csproj", "{32B33C80-0D0D-4D1F-8A22-EE88353A2F43}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
