@@ -8,13 +8,9 @@ namespace ReportApp.Entities.Dto.User
 {
     public class LoginResult
     {
-        public string AccessToken { get; set; } = "";
+        public string Token { get; set; } = string.Empty;
 
         public DateTime AccessTokenExpiration { get; set; }
-
-        public string RefreshToken { get; set; } = "";
-
-        public DateTime RefreshTokenExpiration { get; set; }
 
     }
 }
