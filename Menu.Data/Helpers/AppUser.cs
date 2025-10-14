@@ -8,15 +8,12 @@ using System.Threading.Tasks;
 
 namespace ReportApp.Repository.Helpers
 {
-    public class AppUser
+    public class AppUser : IdentityUser
     {
-        public class AppUser : IdentityUser
-        {
             [StringLength(200)]
             public required string FamilyName { get; set; } = "";
 
             [StringLength(200)]
             public required string GivenName { get; set; } = "";
-        }
     }
 }

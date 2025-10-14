@@ -23,6 +23,12 @@ namespace Menu.Repository
             ctx.SaveChanges();
         }
 
+        public async Task CreateAsync(T entity)
+        {
+            ctx.Set<T>().Add(entity);
+            await ctx.SaveChangesAsync();
+        }
+
         public void CreateMany(IEnumerable<T> entities)
         {
             ctx.Set<T>().AddRange(entities);
